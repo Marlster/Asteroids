@@ -1,8 +1,10 @@
 import React from 'react';
 import { Stage, Layer, Rect, Text } from 'react-konva';
+import PropTypes from 'prop-types';
 import Konva from 'konva';
 
-class Orbit extends React.Component<{bgColor: string, orbits: JSON}>{
+class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, a: number}>}> {
+
     render() {
         var orbitStyle = {
             padding:10,

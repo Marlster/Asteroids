@@ -55,11 +55,6 @@ const App: React.FC = () => (
             <IonIcon icon={apps} />
             <IonLabel>Karl</IonLabel>
           </IonTabButton>
-          {/*
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={send} />
-            <IonLabel>Tab Three</IonLabel>
-          </IonTabButton> */}
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>

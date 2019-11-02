@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Orbit from './Orbit';
-class Map extends React.Component<{bgColor: string, e: number, a: number}>{
+class Map extends React.Component<{}>{
 
     state = {
-        orbits: {
-            eccentricity: 2,
-            a: 1
-        },
+        orbits: [
+            {e: 2, a: 1},
+            {e: 3, a: 1}
+        ],
         text: "PRESS TO LAUNCH", 
         launched: false
     }

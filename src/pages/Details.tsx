@@ -9,11 +9,11 @@ const Details: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tab2" />
           </IonButtons>
-          <IonTitle>Detail</IonTitle>
+          <IonTitle>Communist Fact #422</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <p>Details</p>
+        <p>The first communist leader to come into power was Vladimir Lenin, following the 1917 Russian Revolution</p>
       </IonContent>
     </IonPage>
   );

@@ -26,19 +26,17 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab One</IonTitle>
+          <IonTitle>ASTEROIDS</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonCard className="welcome-card">
           <IonCardHeader>
-            <IonCardSubtitle>Get Started</IonCardSubtitle>
-            <IonCardTitle>Welcome to Ionic</IonCardTitle>
+            <IonCardTitle>About</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <p>
-              Now that your app has been created, you'll want to start building out features and
-              components. Check out some of the resources below for next steps.
+              Asteroid orbits that also happen to be near Earth
             </p>
           </IonCardContent>
           {/* <Circle bgColor = "red"/> */}

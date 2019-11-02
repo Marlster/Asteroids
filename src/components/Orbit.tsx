@@ -3,15 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 //import Konva from 'konva';
 import { convertToView } from '@ionic/core/dist/types/components/nav/view-controller';
-import './Orbit.css';
 
-function ellipse(props:any){
-    const {ctx, x, y, a, b, r} = props;
-    ctx.beginPath()
-    ctx.ellipse(x,y,a,b,r,0,2 * Math.PI);
-    ctx.stroke();
-
-}
 
 //creates orbit ellipse on canvas
 class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, a: number}>}> {
@@ -35,40 +27,41 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         const ctx = canvas.getContext('2d');
         //it's a sun at one of the foci points
         ctx.beginPath();
-        ctx.arc(1753, 540, 100, 0, 2 * Math.PI);
+        ctx.arc(960, 400, 50, 0, 2 * Math.PI);
         ctx.fillStyle="gold";
         ctx.fill();
 
         //it's a earth
         ctx.beginPath();
-        ctx.arc(1353, 540, 25, 0, 2 * Math.PI);
+        ctx.arc(1200, 400, 10, 0, 2 * Math.PI);
         ctx.strokeStyle="blue";
         ctx.stroke();
 
-
+        ctx.strokeStyle="black";
 
         //third is major axis, fourth is minor axis
         //fifth is rotation in rads
         //calulcate b using eccentricity - will have to be scaled up to match somhow 
         //multipled by 400. 1au = 400
-
         const au=400;
         const x=960;
-        const y=540;
-        //fix this
+        const y=400;
         for (let i=0;i<this.props.orbits.length;i++){
+            console.log("Loop");
             const a=au*this.props.orbits[i].a;
             //semi major axis equation ie. a^2(1-e^2)
             const b=au*Number(Math.pow(this.props.orbits[i].a,2)*(1-Math.pow(this.props.orbits[i].e,2)));
-            const rotation=0;
-            ellipse({ctx,x,y,a,b,rotation});
+            const rotation=Math.random() * 2 * 3.14;
+            ctx.beginPath()
+            ctx.ellipse(x,y,a,b,rotation,0,2 * Math.PI);
+            ctx.stroke();
         }
 
       }
 
     render() {
         return (
-            <canvas ref={this.orbit}/>
+            <canvas ref={this.orbit} width={1980} height={800}/>
         );
     }
 };

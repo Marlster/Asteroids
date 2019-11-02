@@ -1,4 +1,6 @@
 import React from 'react';
+import { Stage, Layer, Rect, Text } from 'react-konva';
+import Konva from 'konva';
 
 class Orbit extends React.Component<{bgColor: string, e: number, a: number}>{
     render() {

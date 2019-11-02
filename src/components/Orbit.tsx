@@ -27,29 +27,29 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         const ctx = canvas.getContext('2d');
         //it's a sun at one of the foci points
         ctx.beginPath();
-        ctx.arc(960, 400, 50, 0, 2 * Math.PI);
+        ctx.arc(1753, 540, 20, 0, 2 * Math.PI);
         ctx.fillStyle="gold";
         ctx.fill();
 
         //it's a earth
         ctx.beginPath();
-        ctx.arc(1200, 400, 10, 0, 2 * Math.PI);
+        ctx.arc(1353, 540, 10, 0, 2 * Math.PI);
         ctx.strokeStyle="blue";
         ctx.stroke();
 
-        ctx.strokeStyle="black";
 
+        ctx.strokeStyle="black"
         //third is major axis, fourth is minor axis
         //fifth is rotation in rads
         //calulcate b using eccentricity - will have to be scaled up to match somhow 
         //multipled by 400. 1au = 400
         const au=400;
-        const x=960;
-        const y=400;
+        const x=1753;
+        const y=540;
         for (let i=0;i<this.props.orbits.length;i++){
             console.log("Loop");
             const a=au*this.props.orbits[i].a;
-            //semi major axis equation ie. a^2(1-e^2)
+            //semi minor axis equation ie. a^2(1-e^2)
             const b=au*Number(Math.pow(this.props.orbits[i].a,2)*(1-Math.pow(this.props.orbits[i].e,2)));
             const rotation=Math.random() * 2 * 3.14;
             ctx.beginPath()

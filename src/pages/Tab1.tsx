@@ -36,7 +36,7 @@ const Tab1: React.FC = () => {
           </IonCardHeader>
           <IonCardContent>
             <p>
-              Asteroid orbits that also happen to be near Earth
+              Asteroid orbits 
             </p>
           </IonCardContent>
           {/* <Circle bgColor = "red"/> */}

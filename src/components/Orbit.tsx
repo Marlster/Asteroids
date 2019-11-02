@@ -44,7 +44,7 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         //calulcate b using eccentricity - will have to be scaled up to match somhow 
         //multipled by 400. 1au = 400
         const au=400;
-        const x=1600;
+        const x=1500;
         const y=540;
         for (let i=0;i<this.props.orbits.length;i++){
             console.log("Loop");

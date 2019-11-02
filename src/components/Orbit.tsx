@@ -44,14 +44,14 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         //calulcate b using eccentricity - will have to be scaled up to match somhow 
         //multipled by 400. 1au = 400
         const au=400;
-        const x=1753;
+        const x=1600;
         const y=540;
         for (let i=0;i<this.props.orbits.length;i++){
             console.log("Loop");
             const a=au*this.props.orbits[i].a;
             //semi minor axis equation ie. a^2(1-e^2)
             const b=au*Number(Math.pow(this.props.orbits[i].a,2)*(1-Math.pow(this.props.orbits[i].e,2)));
-            const rotation=Math.random() * 2 * 3.14;
+            const rotation=0;
             ctx.beginPath()
             ctx.ellipse(x,y,a,b,rotation,0,2 * Math.PI);
             ctx.stroke();

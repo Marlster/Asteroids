@@ -17,6 +17,7 @@ import {
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import Circle from '../components/Circle';
+import Orbit from '../components/Orbit';
 import React from 'react';
 import './Tab1.css';
 
@@ -30,7 +31,6 @@ const Tab1: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonCard className="welcome-card">
-          <img src="/assets/shapes.svg" alt="" />
           <IonCardHeader>
             <IonCardSubtitle>Get Started</IonCardSubtitle>
             <IonCardTitle>Welcome to Ionic</IonCardTitle>
@@ -42,29 +42,8 @@ const Tab1: React.FC = () => {
             </p>
           </IonCardContent>
           <Circle bgColor = "red"/>
+          <Orbit bgColor="blue" ec={2} />
         </IonCard>
-
-        <IonList lines="none">
-          <IonListHeader>
-            <IonLabel>Resources</IonLabel>
-          </IonListHeader>
-          <IonItem href="https://ionicframework.com/docs/" target="_blank">
-            <IonIcon slot="start" color="medium" icon={book} />
-            <IonLabel>Ionic Documentation</IonLabel>
-          </IonItem>
-          <IonItem href="https://ionicframework.com/docs/building/scaffolding" target="_blank">
-            <IonIcon slot="start" color="medium" icon={build} />
-            <IonLabel>Scaffold Out Your App</IonLabel>
-          </IonItem>
-          <IonItem href="https://ionicframework.com/docs/layout/structure" target="_blank">
-            <IonIcon slot="start" color="medium" icon={grid} />
-            <IonLabel>Change Your App Layout</IonLabel>
-          </IonItem>
-          <IonItem href="https://ionicframework.com/docs/theming/basics" target="_blank">
-            <IonIcon slot="start" color="medium" icon={colorFill} />
-            <IonLabel>Theme Your App</IonLabel>
-          </IonItem>
-        </IonList>
       </IonContent>
     </IonPage>
   );

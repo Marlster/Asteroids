@@ -15,10 +15,6 @@ function ellipse(props:any){
 //creates orbit ellipse on canvas
 class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, a: number}>}> {
     private orbit: React.RefObject<HTMLCanvasElement>;
-    constructor (props){
-        super(props);
-        this.orbit = React.createRef();
-    }
 
     componentDidMount() {
         this.updateCanvas();
@@ -43,7 +39,7 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         const rotation=0;
         ellipse({ctx,x,y,a,b,rotation});
       }
-      
+
     render() {
         return (
             <canvas ref={this.orbit} width={200} height={300}/ >

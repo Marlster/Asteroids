@@ -59,7 +59,7 @@ class Map extends React.Component<{}>{
             return (
                 <div className='button__container'>
                     <button className='button' onClick={this.handleClick}>
-                        {this.state.text}
+                       <h1> {this.state.text} </h1>
                     </button>
                 </div>
             )

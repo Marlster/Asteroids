@@ -43,8 +43,12 @@ class Map extends React.Component<{}>{
         },8000);
     }
     componentDidMount = async () => {
-        let response = await fetch(`https://marxmoonmen.ml/api?dateMin=2019-11-02&dateMax=2020-01-01&distMin=0&distMax=0.5`);
-        this.setState({orbits: response});
+        fetch(`https://marxmoonmen.ml/api?dateMin=2019-11-02&dateMax=2020-01-01&distMin=0&distMax=0.5`).then((res) => {
+            return res.json();
+        }).then((data) => {
+            this.setState({orbits: data});
+        })
+        // this.setState({orbits: response.body});
     }
     render () {
         if (this.state.launched) {

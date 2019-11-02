@@ -18,7 +18,8 @@ const Details: React.FC = () => {
         <h2>{facts[Math.floor(Math.random() * facts.length)]}</h2>
         <br></br>
       </IonContent>
-      <img src="public/assests/cs.jpg"/>
+      {/* <img src="/assets/shapes.svg" alt="" /> */}
+      <img src="/assets/cs.jpg"/>
     </IonPage>
   );
 };

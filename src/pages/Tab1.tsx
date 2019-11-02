@@ -42,7 +42,7 @@ const Tab1: React.FC = () => {
             </p>
           </IonCardContent>
           <Circle bgColor = "red"/>
-          <Orbit bgColor="blue" ec={2} />
+          <Orbit bgColor="blue" e={2} a={1}/>
         </IonCard>
       </IonContent>
     </IonPage>

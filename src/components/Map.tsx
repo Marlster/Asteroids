@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Orbit from './Orbit';
+
 class Map extends React.Component<{}>{
 
     state = {
@@ -11,35 +12,38 @@ class Map extends React.Component<{}>{
         launched: false
     }
 
-    handleClick () {
-        this.setState({text: "GET READY"})
+    handleClick = () => {
         var _this = this;
+        setTimeout(function(){
+            _this.setState({text: "GET"})
+        },1);
+        setTimeout(function(){
+            _this.setState({text: "READY"})
+        },1000);
         setTimeout(function(){
             _this.setState({text: "TO"})
         },2000);
         setTimeout(function(){
             _this.setState({text: "LAUNCH"})
-        },4000);
+        },3000);
         setTimeout(function(){
             _this.setState({text: "3"})
-        },6000);
+        },4000);
         setTimeout(function(){
             _this.setState({text: "2"})
-        },7000);
+        },5000);
         setTimeout(function(){
             _this.setState({text: "1"})
-        },8000);
+        },6000);
         setTimeout(function(){
             _this.setState({text: "BLASTOFF!!!!"})
-        },9000);
-
+        },7000);
+        setTimeout(function(){
+            _this.setState({launched: true})
+        },8000);
     }
     componentDidMount = async () => {
-        let response = await fetch("http://someurl:3000/ENDPOINT", {
-            method: 'GET',
-            credentials: "same-origin",
-            mode: "same-origin",    
-        });
+        let response = await fetch(`https://marxmoonmen.ml/api?dateMin=2019-11-02&dateMax=2020-01-01&distMin=0&distMax=0.5`);
         this.setState({orbits: response});
     }
     render () {

@@ -13,8 +13,10 @@ const Details: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <p>The first communist leader to come into power was Vladimir Lenin, following the 1917 Russian Revolution</p>
+        <h2>The first communist leader to come into power was Vladimir Lenin, following the 1917 Russian Revolution</h2>
+        <br></br>
       </IonContent>
+      <img src="public/assests/cs.jpg"/>
     </IonPage>
   );
 };

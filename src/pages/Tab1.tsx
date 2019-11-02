@@ -16,6 +16,7 @@ import {
   IonToolbar
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
+import Circle from '../components/Circle';
 import React from 'react';
 import './Tab1.css';
 
@@ -40,6 +41,7 @@ const Tab1: React.FC = () => {
               components. Check out some of the resources below for next steps.
             </p>
           </IonCardContent>
+          <Circle bgColor = "red"/>
         </IonCard>
 
         <IonList lines="none">

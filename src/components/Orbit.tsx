@@ -27,16 +27,17 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
         const ctx = canvas.getContext('2d');
         //it's a sun at one of the foci points
         ctx.beginPath();
-        ctx.arc(1600, 400, 100, 0, 2 * Math.PI);
+        ctx.arc(960, 400, 50, 0, 2 * Math.PI);
         ctx.fillStyle="gold";
         ctx.fill();
 
         //it's a earth
         ctx.beginPath();
-        ctx.arc(1200, 400, 25, 0, 2 * Math.PI);
+        ctx.arc(1200, 400, 10, 0, 2 * Math.PI);
         ctx.strokeStyle="blue";
         ctx.stroke();
 
+        ctx.strokeStyle="black";
 
         //third is major axis, fourth is minor axis
         //fifth is rotation in rads
@@ -50,7 +51,7 @@ class Orbit extends React.Component<{bgColor: string, orbits: Array<{e: number, 
             const a=au*this.props.orbits[i].a;
             //semi major axis equation ie. a^2(1-e^2)
             const b=au*Number(Math.pow(this.props.orbits[i].a,2)*(1-Math.pow(this.props.orbits[i].e,2)));
-            const rotation=0;
+            const rotation=Math.random() * 2 * 3.14;
             ctx.beginPath()
             ctx.ellipse(x,y,a,b,rotation,0,2 * Math.PI);
             ctx.stroke();
